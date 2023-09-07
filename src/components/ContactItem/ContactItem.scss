@@ -1,0 +1,249 @@
+.human-resources {
+  --bg-color-light: #f1f7ff;
+  --text-color-hover: #ffffff;
+}
+.card {
+  width: 550px;
+  padding: 40px 20px;
+  background: #fff;
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0px 26px rgba(0, 0, 0, 0.347);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  border-radius: 30px !important;
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000;
+    p {
+      font-size: 16px;
+      color: #000000;
+      transition: color 0.5s ease-out;
+      font-weight: 400;
+      span {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+  .circle {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid rgb(172, 70, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+    img {
+      width: 80px;
+      z-index: 2;
+      border-radius: 50%;
+    }
+    &:after {
+      content: "";
+      width: 118px;
+      height: 118px;
+      display: block;
+      position: absolute;
+      background: linear-gradient(
+        to bottom,
+        rgb(255, 136, 255),
+        rgb(172, 70, 255)
+      );
+      border-radius: 50%;
+      transition: opacity 0.3s ease-out;
+    }
+  }
+  .overlay {
+    width: 118px;
+    position: absolute;
+    height: 118px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to right,
+      rgb(255, 136, 255),
+      rgb(172, 70, 255)
+    );
+    top: 55px;
+    left: 25px;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+  }
+  .control {
+    width: 100px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    .delete,
+    .favorite,
+    .edit {
+      .Btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition-duration: 0.3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: rgb(255, 0, 0);
+      }
+      .sign {
+        width: 100%;
+        transition-duration: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sign svg path {
+        fill: white;
+      }
+      .text {
+        position: absolute;
+        right: 0%;
+        width: 0%;
+        opacity: 0;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 600;
+        transition-duration: 0.3s;
+      }
+      .Btn:hover {
+        width: 110px;
+        border-radius: 40px;
+        transition-duration: 0.3s;
+      }
+      .Btn:hover .sign {
+        transition-duration: 0.3s;
+        margin-left: -30px;
+      }
+      .Btn:hover .text {
+        opacity: 1;
+        width: 80%;
+        transition-duration: 0.3s;
+        font-size: 16px;
+      }
+    }
+    .favorite {
+      .Btn {
+        background-color: rgb(255, 157, 0);
+      }
+      .Btn:hover .text {
+        opacity: 1;
+        width: 75%;
+        transition-duration: 0.3s;
+        font-size: 16px;
+      }
+      .Btn:hover .sign {
+        margin-left: -34px;
+      }
+    }
+    .edit {
+      .Btn {
+        background-color: #405dff;
+      }
+    }
+  }
+  .favoritecontact {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    .isFavorite {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: 170px;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      .icon {
+        width: 30px;
+        height: 30px;
+        transition: 0.2s linear;
+        & path {
+          fill: red;
+          transition: 0.2s linear;
+        }
+      }
+
+      &::after {
+        content: "Favorite contact";
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s linear;
+        left: 45px;
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+      0 24px 46px rgba(0, 0, 0, 0.283);
+  }
+  &:hover {
+    .favoritecontact {
+      .isFavorite {
+        &::after {
+          visibility: visible;
+          opacity: 1;
+        }
+        & > .icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  &:hover .overlay {
+    transform: scale(8.7);
+    background: linear-gradient(
+      to right,
+      rgb(255, 136, 255),
+      rgb(172, 70, 255)
+    );
+  }
+  &:hover .circle {
+    border-color: var(--bg-color-light);
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 136, 255),
+      rgb(172, 70, 255)
+    );
+  }
+  &:hover .circle:after {
+    background: var(--bg-color-light);
+  }
+  &:hover p {
+    color: var(--text-color-hover);
+  }
+  &:active {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
+      0 15px 24px var(--box-shadow-color);
+  }
+}

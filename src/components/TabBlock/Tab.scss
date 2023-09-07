@@ -1,0 +1,43 @@
+.contact__items {
+  .nav {
+    display: flex !important;
+    gap: 30px;
+    .nav-item {
+      button {
+        background-color: #eaeaea;
+        color: #000;
+        font-weight: 500;
+      }
+      .active {
+        background: linear-gradient(
+          to left,
+          rgb(255, 136, 255),
+          rgb(172, 70, 255)
+        );
+        color: white;
+      }
+    }
+  }
+  .tab-content {
+    .active {
+      width: 100%;
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      .card {
+        width: 48.5%;
+      }
+    }
+    .no-contact {
+      width: 100%;
+      padding: 40px 0;
+      display: flex !important;
+      justify-content: center;
+      p {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
